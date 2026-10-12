@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Birthday, Sunshine! ☀️</title>
+  <meta name="description" content="A warm, pastel yellow birthday celebration scrapbook dedicated to someone truly special.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="theme-vintage-sunflower">
+  <!-- Interactive Floating Background Canvas (Petals & Butterflies) -->
+  <canvas id="ambient-canvas"></canvas>
+
+  <!-- Background Wallpaper Layer -->
+  <div id="bg-overlay" class="bg-wallpaper"></div>
+  <div id="bg-texture-scrim" class="bg-texture-scrim"></div>
+
+  <!-- Top Floating Status Bar -->
+  <header class="top-nav-bar" id="top-nav">
+    <div class="nav-pill glass-card">
+      <div class="nav-left">
+        <span class="sunflower-badge">🌻</span>
+        <span class="nav-tagline" id="nav-birthday-tag">Special Birthday Edition</span>
+      </div>
+      <div class="nav-center" id="countdown-container">
+        <span class="countdown-icon">⏳</span>
+        <span id="nav-countdown-text">Counting down to your special day...</span>
+      </div>
+      <div class="nav-right">
+        <button id="music-toggle-btn" class="nav-action-btn" title="Toggle Sweet Lo-Fi Melody">
+          <span class="music-icon" id="music-icon">🎵</span>
+          <span class="music-label" id="music-label">Play Music</span>
+        </button>
+        <button id="open-customize-btn" class="nav-action-btn primary-btn" title="Open Website Customizer">
+          <span>✨ Customize</span>
+          <span class="edit-kbd-hint">Shift+E</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Scrapbook Content Area -->
+  <main class="scrapbook-container">
+    
+    <!-- Hero Section -->
+    <section class="scrapbook-hero" id="hero-section">
+      <!-- Aesthetic Washi Tape & Vintage Stickers -->
+      <div class="washi-tape washi-top-left"></div>
+      <div class="washi-tape washi-top-right"></div>
+      <div class="vintage-stamp stamp-sunflower">🌻 100% Sunshine</div>
+      <div class="vintage-quote-tag tag-left">"I told the stars about you" ✨</div>
+      <div class="vintage-quote-tag tag-right">"Brighter than morning light" 🌼</div>
+
+      <div class="hero-card glass-panel torn-edge">
+        <div class="ribbon-bow-svg">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#D97706" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 12c-2.5-3.5-6-4-8-2s-1 5.5 2.5 6.5L12 12z"></path>
+            <path d="M12 12c2.5-3.5 6-4 8-2s1 5.5-2.5 6.5L12 12z"></path>
+            <circle cx="12" cy="12" r="2.5" fill="#FCD34D"></circle>
+            <path d="M10 14.5l-4 7"></path>
+            <path d="M14 14.5l4 7"></path>
+          </svg>
+        </div>
+
+        <p class="hero-pre-title" id="display-hero-pre">A VERY SPECIAL CELEBRATION</p>
+        <h1 class="hero-title">
+          Happy Birthday, <span class="highlight-name" id="display-name">Aaradhya</span>! ☀️
+        </h1>
+        <p class="hero-subtitle" id="display-subtitle">
+          Wishing the sweetest, brightest, and most peaceful year to someone who naturally brings warmth and happiness wherever she goes.
+        </p>
+
+        <!-- Quick Hero Actions -->
+        <div class="hero-buttons">
+          <a href="#cake-section" class="scrapbook-btn primary-action">
+            <span>🎂 Make a Wish</span>
+          </a>
+          <a href="#letter-section" class="scrapbook-btn secondary-action">
+            <span>💌 Read Your Letter</span>
+          </a>
+          <a href="#gallery-section" class="scrapbook-btn tertiary-action">
+            <span>📷 Moments & Memories</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive Birthday Cake & Wish Ceremony -->
+    <section class="scrapbook-section" id="cake-section">
+      <div class="section-header">
+        <span class="section-eyebrow">A Sweet Tradition</span>
+        <h2 class="section-title">Make a Birthday Wish 🎂</h2>
+        <p class="section-desc">Click the candles to blow them out and release a shower of sunshine wishes!</p>
+      </div>
+
+      <div class="cake-card glass-panel">
+        <div class="cake-interactive-area" id="cake-container" role="button" tabindex="0" title="Click to blow out the candles!">
+          <!-- Interactive SVG Cake -->
+          <div class="cake-svg-wrapper">
+            <svg id="birthday-cake-svg" viewBox="0 0 300 240" class="cake-illustration">
+              <!-- Cake Plate -->
+              <ellipse cx="150" cy="220" rx="125" ry="16" fill="#F5EEDB" stroke="#E6D7B8" stroke-width="3" />
+              <ellipse cx="150" cy="216" rx="110" ry="12" fill="#FFFFFF" />
+
+              <!-- Bottom Tier -->
+              <rect x="55" y="140" width="190" height="70" rx="12" fill="#FEF3C7" stroke="#FDE68A" stroke-width="2" />
+              <!-- Cream Drips Bottom -->
+              <path d="M55,140 C65,158 75,158 85,140 C95,162 105,162 115,140 C125,160 135,160 145,140 C155,165 165,165 175,140 C185,158 195,158 205,140 C215,162 225,162 235,140 C240,140 245,140 245,140 L245,155 L55,155 Z" fill="#FFFDF0" />
+
+              <!-- Daisies on Bottom Tier -->
+              <circle cx="85" cy="180" r="6" fill="#FCD34D" />
+              <circle cx="85" cy="172" r="4" fill="#FFFFFF" /><circle cx="93" cy="180" r="4" fill="#FFFFFF" /><circle cx="85" cy="188" r="4" fill="#FFFFFF" /><circle cx="77" cy="180" r="4" fill="#FFFFFF" />
+              <circle cx="215" cy="180" r="6" fill="#FCD34D" />
+              <circle cx="215" cy="172" r="4" fill="#FFFFFF" /><circle cx="223" cy="180" r="4" fill="#FFFFFF" /><circle cx="215" cy="188" r="4" fill="#FFFFFF" /><circle cx="207" cy="180" r="4" fill="#FFFFFF" />
+
+              <!-- Top Tier -->
+              <rect x="85" y="90" width="130" height="52" rx="10" fill="#FEF08A" stroke="#FDE047" stroke-width="2" />
+              <!-- Top Cream Drip -->
+              <path d="M85,90 C95,105 105,105 115,90 C125,108 135,108 145,90 C155,106 165,106 175,90 C185,104 195,104 205,90 C210,90 215,90 215,90 L215,102 L85,102 Z" fill="#FFFDF0" />
+
+              <!-- Daisies on Top Tier -->
+              <circle cx="150" cy="120" r="7" fill="#F59E0B" />
+              <circle cx="150" cy="111" r="5" fill="#FFFFFF" /><circle cx="159" cy="120" r="5" fill="#FFFFFF" /><circle cx="150" cy="129" r="5" fill="#FFFFFF" /><circle cx="141" cy="120" r="5" fill="#FFFFFF" />
+
+              <!-- Candles -->
+              <!-- Candle 1 -->
+              <rect x="115" y="55" width="8" height="35" rx="3" fill="#FDE68A" stroke="#F59E0B" stroke-width="1.5" />
+              <line x1="119" y1="55" x2="119" y2="48" stroke="#78350F" stroke-width="2" />
+              <!-- Candle 2 (Center) -->
+              <rect x="146" y="45" width="8" height="45" rx="3" fill="#FCD34D" stroke="#D97706" stroke-width="1.5" />
+              <line x1="150" y1="45" x2="150" y2="38" stroke="#78350F" stroke-width="2" />
+              <!-- Candle 3 -->
+              <rect x="177" y="55" width="8" height="35" rx="3" fill="#FDE68A" stroke="#F59E0B" stroke-width="1.5" />
+              <line x1="181" y1="55" x2="181" y2="48" stroke="#78350F" stroke-width="2" />
+
+              <!-- Candle Flames (Animated) -->
+              <g id="candle-flames" class="flames-group">
+                <path class="flame flame-1" d="M119,48 C114,40 114,32 119,25 C124,32 124,40 119,48 Z" fill="url(#flameGradient)" />
+                <path class="flame flame-2" d="M150,38 C144,28 144,20 150,12 C156,20 156,28 150,38 Z" fill="url(#flameGradient)" />
+                <path class="flame flame-3" d="M181,48 C176,40 176,32 181,25 C186,32 186,40 181,48 Z" fill="url(#flameGradient)" />
+              </g>
+
+              <!-- Smoke (Hidden by default, shows when blown) -->
+              <g id="candle-smoke" class="smoke-group" style="display: none;">
+                <path class="smoke-path s1" d="M119,45 Q115,35 122,25 T118,10" stroke="#CBD5E1" stroke-width="2" fill="none" stroke-linecap="round" />
+                <path class="smoke-path s2" d="M150,35 Q145,20 155,10 T148,0" stroke="#CBD5E1" stroke-width="2.5" fill="none" stroke-linecap="round" />
+                <path class="smoke-path s3" d="M181,45 Q185,35 178,25 T182,10" stroke="#CBD5E1" stroke-width="2" fill="none" stroke-linecap="round" />
+              </g>
+
+              <defs>
+                <linearGradient id="flameGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                  <stop offset="0%" stop-color="#FEF08A" />
+                  <stop offset="50%" stop-color="#F59E0B" />
+                  <stop offset="100%" stop-color="#EA580C" />
+                </linearGradient>
+              </defs>
+            </svg>
+          </div>
+
+          <div class="cake-instruction" id="cake-status-label">
+            <span class="tap-icon">✨</span> Tap the cake to blow the candles & make a wish!
+          </div>
+
+          <!-- Secret Wish Message Card (Unlocked on Blow) -->
+          <div class="wish-reveal-box" id="wish-reveal-box">
+            <div class="wish-badge">🌟 Wish Sent to the Universe!</div>
+            <p class="wish-text" id="display-wish-text">
+              "May this new lap around the sun bring you endless warm coffee, laughter that makes your stomach hurt, golden hour skies, and all the peaceful happiness you deserve."
+            </p>
+            <p class="wish-subtext">Happy Birthday, <span class="wish-recipient-name">Aaradhya</span>! 🌻</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Polaroid Scrapbook Gallery -->
+    <section class="scrapbook-section" id="gallery-section">
+      <div class="section-header">
+        <span class="section-eyebrow">Scrapbook Highlights</span>
+        <h2 class="section-title">Frames of Sunshine 📷</h2>
+        <p class="section-desc">Click any card to flip and read the secret note on the back, or customize them with your own photos!</p>
+      </div>
+
+      <div class="polaroid-grid" id="polaroid-container">
+        <!-- Rendered dynamically by JavaScript -->
+      </div>
+    </section>
+
+    <!-- The Heartfelt Sunshine Letter -->
+    <section class="scrapbook-section" id="letter-section">
+      <div class="section-header">
+        <span class="section-eyebrow">Special Delivery</span>
+        <h2 class="section-title">A Birthday Note For You 💌</h2>
+        <p class="section-desc">Click the golden sunflower wax seal to break the seal and unfold the letter.</p>
+      </div>
+
+      <div class="envelope-wrapper">
+        <div class="vintage-envelope" id="vintage-envelope">
+          <!-- Envelope Flap & Wax Seal -->
+          <div class="envelope-front">
+            <div class="envelope-top-fold"></div>
+            <div class="envelope-address">
+              <span class="stamp-postmark">AIR MAIL • SPECIAL DELIVERY</span>
+              <p class="recipient-label">FOR:</p>
+              <h3 class="letter-for-name" id="display-letter-name">Aaradhya</h3>
+              <p class="letter-for-tagline" id="display-letter-moniker">The human embodiment of sunshine 🌻</p>
+            </div>
+            
+            <button class="wax-seal-btn" id="wax-seal-btn" title="Click to break seal and read">
+              <div class="wax-seal-circle">
+                <span class="wax-seal-icon">☀️</span>
+                <span class="wax-seal-text">OPEN</span>
+              </div>
+            </button>
+          </div>
+
+          <!-- Unfolded Letter Paper -->
+          <div class="letter-paper torn-edge" id="unfolded-letter">
+            <div class="letter-washi-tape"></div>
+            <div class="letter-header">
+              <span class="letter-date" id="display-letter-date">October 2026</span>
+              <span class="letter-stamp">🌻 Sunshine Edition</span>
+            </div>
+
+            <div class="letter-body-content">
+              <h3 class="letter-salutation" id="display-letter-salutation">Dear Aaradhya,</h3>
+              <div class="letter-text" id="display-letter-body">
+                <!-- Editable Letter Body -->
+                <p>Happy Birthday! Another year wiser, brighter, and undeniably more awesome.</p>
+                <p>I just wanted to take a moment today to remind you how genuinely appreciated you are. In a world that is often fast and chaotic, you have this natural way of making everything feel calm, warm, and effortless. Whether it's your infectious laugh, your thoughtful questions, or just the lighthearted energy you bring into every conversation, you make ordinary days feel noticeably better.</p>
+                <p>I hope today treats you to your absolute favorite things—the best cup of coffee, the coziest playlist, people who make you smile till your cheeks hurt, and all the pastel yellow vibes in the world.</p>
+                <p>Here’s to another year of exciting adventures, new memories, quiet peaceful mornings, and big dreams coming true. The world is honestly so much better with you in it.</p>
+              </div>
+              <div class="letter-signoff">
+                <p class="signoff-note" id="display-letter-closing">Have the happiest day,</p>
+                <p class="signoff-signature" id="display-letter-sender">Your Friend & Well-Wisher ✨</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- "Little Rays of Sunshine" (Reasons why you're wonderful) -->
+    <section class="scrapbook-section" id="reasons-section">
+      <div class="section-header">
+        <span class="section-eyebrow">Little Things</span>
+        <h2 class="section-title">Rays of Sunshine ☀️</h2>
+        <p class="section-desc">A few of the countless little reasons you make the world a warmer place.</p>
+      </div>
+
+      <div class="sunshine-reasons-grid" id="reasons-container">
+        <!-- Rendered dynamically by JavaScript -->
+      </div>
+    </section>
+
+    <!-- Birthday Mixtape / Music Player Section -->
+    <section class="scrapbook-section" id="playlist-section">
+      <div class="section-header">
+        <span class="section-eyebrow">Soundtrack of the Day</span>
+        <h2 class="section-title">The Birthday Mixtape 📻</h2>
+        <p class="section-desc">A cozy acoustic & lo-fi tune tuned to warm pastel sunshine frequencies.</p>
+      </div>
+
+      <div class="cassette-player-card glass-panel">
+        <div class="cassette-body">
+          <div class="cassette-label">
+            <span class="label-header">PASTEL YELLOW MIXTAPE • VOL. 1</span>
+            <div class="cassette-spools">
+              <div class="spool spool-left" id="spool-left">
+                <div class="spool-inner"></div>
+              </div>
+              <div class="tape-window">
+                <span class="track-title-ticker" id="current-track-name">Sweet Sunshine Acoustic Lo-Fi (Happy Birthday)</span>
+              </div>
+              <div class="spool spool-right" id="spool-right">
+                <div class="spool-inner"></div>
+              </div>
+            </div>
+            <div class="cassette-footer">
+              <span>FOR: <strong id="cassette-recipient">AARADHYA</strong></span>
+              <span>SIDE A • HIGH FIDELITY</span>
+            </div>
+          </div>
+
+          <div class="cassette-controls">
+            <button class="player-btn" id="btn-mixtape-play" title="Play/Pause">
+              <span id="mixtape-play-icon">▶ Play</span>
+            </button>
+            <div class="volume-slider-group">
+              <span class="vol-icon">🔉</span>
+              <input type="range" id="audio-volume" min="0" max="1" step="0.05" value="0.7" title="Volume">
+              <span class="vol-icon">🔊</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="scrapbook-footer">
+      <div class="footer-card glass-panel">
+        <p class="footer-cheer">🌻 Keep shining brightly, <span id="footer-name">Aaradhya</span>! 🌻</p>
+        <p class="footer-subtext">Handcrafted with pastel yellow warmth & aesthetic care.</p>
+        <div class="footer-actions">
+          <button id="footer-customize-btn" class="footer-btn">
+            🎨 Customize This Page
+          </button>
+          <button id="footer-wish-again-btn" class="footer-btn">
+            ✨ Make Another Wish
+          </button>
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <!-- ============================================== -->
+  <!-- QUICK ACCESSIBLE CUSTOMIZE BAR / SIDE DRAWER -->
+  <!-- ============================================== -->
+  <aside class="customize-drawer" id="customize-drawer" aria-hidden="true">
+    <div class="drawer-header">
+      <div class="drawer-title-group">
+        <span class="drawer-icon">🎨</span>
+        <div>
+          <h3 class="drawer-title">Quick Customize Bar</h3>
+          <p class="drawer-subtitle">Personalize every detail with instant live preview!</p>
+        </div>
+      </div>
+      <button class="drawer-close-btn" id="close-customize-btn" title="Close Toolbar (Esc)">✕</button>
+    </div>
+
+    <!-- Navigation Tabs for Customize Bar -->
+    <nav class="drawer-tabs" role="tablist">
+      <button class="drawer-tab active" data-tab="tab-basics" role="tab">👤 Basics</button>
+      <button class="drawer-tab" data-tab="tab-theme" role="tab">🌻 Theme</button>
+      <button class="drawer-tab" data-tab="tab-photos" role="tab">📷 Polaroids</button>
+      <button class="drawer-tab" data-tab="tab-letter" role="tab">💌 Letter</button>
+      <button class="drawer-tab" data-tab="tab-reasons" role="tab">✨ Reasons</button>
+      <button class="drawer-tab" data-tab="tab-share" role="tab">🚀 Finish & Share</button>
+    </nav>
+
+    <!-- Tab Contents Container -->
+    <div class="drawer-content">
+      
+      <!-- TAB 1: Basics -->
+      <section class="tab-pane active" id="tab-basics">
+        <div class="form-group">
+          <label for="input-name">Crush's Name / Recipient</label>
+          <input type="text" id="input-name" class="styled-input" placeholder="e.g. Aaradhya" value="Aaradhya">
+          <small class="help-text">Updates all headers, cake wishes, letters, and badges across the site.</small>
+        </div>
+
+        <div class="form-group">
+          <label for="input-moniker">Nickname / Tagline</label>
+          <input type="text" id="input-moniker" class="styled-input" placeholder="e.g. Sunshine, Daydreamer" value="Sunshine 🌻">
+        </div>
+
+        <div class="form-group">
+          <label for="input-birthdate">Birthday Date</label>
+          <input type="date" id="input-birthdate" class="styled-input">
+          <small class="help-text">Sets the live countdown or "Happy Birthday Today!" celebration banner.</small>
+        </div>
+
+        <div class="form-group">
+          <label for="input-hero-title-pre">Pre-Title Tag</label>
+          <input type="text" id="input-hero-title-pre" class="styled-input" value="A VERY SPECIAL CELEBRATION">
+        </div>
+
+        <div class="form-group">
+          <label for="input-subtitle">Hero Subtitle</label>
+          <textarea id="input-subtitle" class="styled-textarea" rows="3">Wishing the sweetest, brightest, and most peaceful year to someone who naturally brings warmth and happiness wherever she goes.</textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="input-wish-text">Cake Wish Reveal Message</label>
+          <textarea id="input-wish-text" class="styled-textarea" rows="3">May this new lap around the sun bring you endless warm coffee, laughter that makes your stomach hurt, golden hour skies, and all the peaceful happiness you deserve.</textarea>
+        </div>
+      </section>
+
+      <!-- TAB 2: Theme & Background -->
+      <section class="tab-pane" id="tab-theme">
+        <div class="form-group">
+          <label>Background Aesthetic (Inspired by your references)</label>
+          <div class="theme-picker-grid">
+            <button class="theme-option-btn active" data-theme="theme-vintage-sunflower">
+              <span class="theme-preview-box preview-sunflower"></span>
+              <span class="theme-name">🌻 Vintage Sunflower Scrapbook</span>
+              <span class="theme-desc">From your 1st image</span>
+            </button>
+            <button class="theme-option-btn" data-theme="theme-gingham-daisy">
+              <span class="theme-preview-box preview-gingham"></span>
+              <span class="theme-name">🌼 Gingham & Daisy Cottagecore</span>
+              <span class="theme-desc">From your 2nd image</span>
+            </button>
+            <button class="theme-option-btn" data-theme="theme-soft-buttercream">
+              <span class="theme-preview-box preview-buttercream"></span>
+              <span class="theme-name">🍯 Soft Buttercream Glow</span>
+              <span class="theme-desc">Pastel yellow clean gradient</span>
+            </button>
+            <button class="theme-option-btn" data-theme="theme-linen-botanical">
+              <span class="theme-preview-box preview-linen"></span>
+              <span class="theme-name">📜 Vintage Linen & Parchment</span>
+              <span class="theme-desc">Warm aesthetic paper texture</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="custom-bg-input">Or Upload Custom Background Image</label>
+          <input type="file" id="custom-bg-file" accept="image/*" class="styled-file-input">
+          <small class="help-text">Will be saved directly to your browser.</small>
+        </div>
+
+        <div class="form-group">
+          <label for="bg-overlay-opacity">Background Scrim Darkness (Readability)</label>
+          <input type="range" id="bg-overlay-opacity" min="0.1" max="0.8" step="0.05" value="0.35" class="styled-slider">
+        </div>
+
+        <div class="form-group">
+          <label class="checkbox-label">
+            <input type="checkbox" id="toggle-floating-petals" checked>
+            <span>Floating Sunflower Petals & Butterflies Animation</span>
+          </label>
+        </div>
+      </section>
+
+      <!-- TAB 3: Polaroids & Photos -->
+      <section class="tab-pane" id="tab-photos">
+        <div class="polaroid-editor-header">
+          <h4>Customize Polaroid Scrapbook Cards</h4>
+          <button class="add-mini-btn" id="btn-add-polaroid">+ Add Card</button>
+        </div>
+        <p class="tab-info-text">Upload her favorite photos or moments, add cute captions, and write a memory note on the back of each card!</p>
+
+        <div id="polaroid-edit-list" class="polaroid-edit-list">
+          <!-- Populated dynamically -->
+        </div>
+      </section>
+
+      <!-- TAB 4: Letter Editor -->
+      <section class="tab-pane" id="tab-letter">
+        <div class="letter-template-picker">
+          <label>Quick Templates (Wholesome & Non-Confessional)</label>
+          <div class="template-chips">
+            <button class="chip-btn" data-template="sunshine">☀️ Sunshine & Warmth</button>
+            <button class="chip-btn" data-template="cheerful">😄 Playful & Cheerful</button>
+            <button class="chip-btn" data-template="cozy">☕ Cozy & Inspiring</button>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="input-letter-salutation">Salutation</label>
+          <input type="text" id="input-letter-salutation" class="styled-input" value="Dear Aaradhya,">
+        </div>
+
+        <div class="form-group">
+          <label for="input-letter-body">Letter Content (Markdown / paragraphs supported)</label>
+          <textarea id="input-letter-body" class="styled-textarea" rows="8"></textarea>
+          <small class="help-text">Sweet, uplifting, sincere appreciation without any awkward romantic confessions.</small>
+        </div>
+
+        <div class="form-group">
+          <label for="input-letter-closing">Closing Note</label>
+          <input type="text" id="input-letter-closing" class="styled-input" value="Have the happiest day,">
+        </div>
+
+        <div class="form-group">
+          <label for="input-letter-sender">Signature</label>
+          <input type="text" id="input-letter-sender" class="styled-input" value="Your Friend & Well-Wisher ✨">
+        </div>
+      </section>
+
+      <!-- TAB 5: Reasons Why She's Wonderful -->
+      <section class="tab-pane" id="tab-reasons">
+        <div class="reasons-editor-header">
+          <h4>Rays of Sunshine (Reasons Why She's Great)</h4>
+          <button class="add-mini-btn" id="btn-add-reason">+ Add Reason</button>
+        </div>
+        <p class="tab-info-text">Sweet compliments that celebrate her personality, kindness, and individuality.</p>
+
+        <div id="reasons-edit-list" class="reasons-edit-list">
+          <!-- Populated dynamically -->
+        </div>
+      </section>
+
+      <!-- TAB 6: Finish & Share -->
+      <section class="tab-pane" id="tab-share">
+        <div class="share-box glass-panel">
+          <div class="share-icon">🎁</div>
+          <h4>Ready to Show Her?</h4>
+          <p>You can turn on <strong>Presentation Mode</strong> to completely hide this customize bar and the edit button. That way, she will only see the clean, magical birthday website!</p>
+          
+          <button id="btn-enter-presentation" class="scrapbook-btn primary-action full-width">
+            <span>✨ Enter Presentation Mode (Hide Toolbar)</span>
+          </button>
+          <small class="help-text text-center">To get the customize bar back later, simply press <strong>Shift + E</strong> or click the subtle yellow flower at the bottom-right corner.</small>
+        </div>
+
+        <hr class="drawer-divider">
+
+        <div class="backup-actions">
+          <label>Data Management</label>
+          <div class="backup-btn-row">
+            <button id="btn-export-json" class="tool-btn">📥 Export Backup (JSON)</button>
+            <label class="tool-btn file-label">
+              📤 Import (JSON)
+              <input type="file" id="import-json-file" accept=".json" style="display:none;">
+            </label>
+          </div>
+          <button id="btn-reset-defaults" class="tool-btn danger-btn">🔄 Reset to Defaults</button>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- Drawer Footer -->
+    <div class="drawer-footer">
+      <button class="action-btn-save" id="btn-save-close">
+        <span>💾 All Changes Auto-Saved</span>
+      </button>
+    </div>
+  </aside>
+
+  <!-- Discreet Trigger to unhide Toolbar in Presentation Mode -->
+  <button id="secret-unhide-btn" class="secret-trigger" title="Press Shift+E or click to reopen Customize Bar" aria-label="Open Customize Bar">
+    🌻
+  </button>
+
+  <!-- Toast Notification Container -->
+  <div id="toast-container" class="toast-container"></div>
+
+  <!-- Audio Context Synthesizer (Zero-dependency Web Audio API lo-fi birthday melody) -->
+  <script src="app.js"></script>
+</body>
+</html>
